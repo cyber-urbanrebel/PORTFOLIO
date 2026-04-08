@@ -1,6 +1,6 @@
-# Portfolio Website
+# Edwin Mburu Kamau Portfolio
 
-A polished single-file portfolio designed for fast iteration in VS Code, easy customization with GitHub Copilot, and simple deployment to GitHub Pages.
+A polished single-file portfolio for Edwin Mburu Kamau, designed for fast iteration in VS Code, easy customization with GitHub Copilot, and simple deployment to GitHub Pages.
 
 ## Project Structure
 
@@ -21,16 +21,16 @@ PORTFOLIO/
 ## What Is Included
 
 - A complete portfolio in `index.html` with HTML, CSS, and JavaScript in one file
-- Hero section with CTA buttons
-- About section with avatar placeholder
+- Hero section with Edwin Mburu Kamau's profile introduction and CTA buttons
+- About section with Edwin's background across IT, cybersecurity, entrepreneurship, design, mentorship, and agriculture
 - Capabilities section
-- Filterable projects grid
-- Ventures section
+- Filterable projects grid featuring SOPHIA, MITM Attack Simulation, and a custom trading bot
+- Ventures section featuring SOPHIA, Urban Crew Apparel, Revhood Automotive, Brotherhood Fitness, and sustainable agriculture themes
 - Workflow timeline
 - Certifications section
-- Testimonials section
+- Testimonials and trust signals section
 - Gallery section with SVG placeholders
-- Contact section with social links and mailto form
+- Contact section with GitHub, LinkedIn, and a clipboard-based contact message form
 - GitHub Pages friendly structure
 
 ## Local Setup in VS Code
@@ -59,14 +59,14 @@ Install these VS Code extensions:
 
 ## Personalization Checklist
 
-Update these placeholders in `index.html`:
+The core Edwin profile content has already been applied in `index.html`.
 
-- `Your Name`
-- `SOPHIA`
-- `YN`
-- `YOUR_USERNAME`
-- `YOUR_HANDLE`
-- `hello@example.com`
+Update these remaining items when ready:
+
+- Replace SVG placeholders with real images
+- Replace `assets/cv.pdf` with Edwin's real CV
+- Update project links if more specific repository URLs are available
+- Add a direct email address if Edwin wants a true send-to-email contact flow
 
 Replace placeholder assets when ready:
 
@@ -79,11 +79,11 @@ Replace placeholder assets when ready:
 
 Use prompts like these in GitHub Copilot Chat:
 
-- `@workspace Replace all instances of "Your Name" with Marcus Kamau in index.html`
-- `@workspace Update the nav logo text "SOPHIA" to MK in index.html`
-- `@workspace Add a new project card to #projects-grid in index.html with category="dev" and name="Security Dashboard"`
-- `@workspace Replace the about avatar image with assets/avatar.jpg and update the alt text`
-- `@workspace Update the CSS color palette in index.html to use a midnight blue and gold theme`
+- `@workspace Replace the avatar placeholder in index.html with assets/avatar.jpg and update the alt text for Edwin Mburu Kamau`
+- `@workspace Replace the SOPHIA project card with a more detailed case study summary and technologies used`
+- `@workspace Add a new venture card for a real Edwin Kamau initiative in the ventures section`
+- `@workspace Update the gallery cards in index.html to use real project images from assets/`
+- `@workspace Change the color palette in index.html to a deeper midnight blue and gold theme while preserving readability`
 
 ## Git Setup
 
@@ -127,19 +127,19 @@ Your site will go live at:
 
 ## Quality Checklist Before Going Live
 
-- Real name added
-- Social links updated
-- Project links tested
+- Edwin Mburu Kamau profile content reviewed
+- Social links tested
+- Project links refined to exact repositories where possible
 - CV file replaced
-- Contact email updated
+- Avatar and gallery images replaced if available
 - Page title updated
 - Meta description updated
 - Open Graph image confirmed
 - Mobile layout checked
-- No leftover placeholders remain
+- Clipboard-based contact form tested
 
 ## Notes
 
-- The contact form uses `mailto:` to open the user’s email app
+- The contact form currently copies a formatted contact message to the clipboard
 - The project is intentionally static for easy hosting on GitHub Pages
 - There are no editor errors in the current template structure
