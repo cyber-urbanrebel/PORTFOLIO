@@ -1,0 +1,2045 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Edwin Mburu Kamau — IT &amp; Cybersecurity Expert, Founder of SOPHIA, Urban Crew Apparel, Revhood Automotive &amp; Brotherhood Fitness. Entrepreneur, Designer, Professional Artist &amp; Athlete." />
+  <meta name="theme-color" content="#0F6E56" />
+  <meta name="color-scheme" content="light" />
+
+  <!-- Open Graph / social sharing -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://cyber-urbanrebel.github.io/PORTFOLIO/" />
+  <meta property="og:title"       content="Edwin Mburu Kamau — Portfolio" />
+  <meta property="og:description" content="IT &amp; Cybersecurity Expert | Founder of SOPHIA, Urban Crew Apparel, Revhood Automotive &amp; Brotherhood Fitness." />
+  <meta property="og:image"       content="https://cyber-urbanrebel.github.io/PORTFOLIO/icons/screenshot-wide.png" />
+  <meta name="twitter:card"       content="summary_large_image" />
+  <meta name="twitter:title"      content="Edwin Mburu Kamau — Portfolio" />
+  <meta name="twitter:description" content="IT &amp; Cybersecurity Expert | Founder of SOPHIA, Urban Crew Apparel, Revhood Automotive &amp; Brotherhood Fitness." />
+  <meta name="twitter:image"      content="https://cyber-urbanrebel.github.io/PORTFOLIO/icons/screenshot-wide.png" />
+
+  <!-- PWA -->
+  <link rel="manifest"            href="manifest.json" />
+  <link rel="apple-touch-icon"    href="icons/icon-192.png" />
+
+  <title>Edwin Mburu Kamau — Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    /* =====================================================
+       DESIGN TOKENS
+    ===================================================== */
+    :root {
+      --color-primary:       #0F6E56;
+      --color-primary-light: #E1F5EE;
+      --color-accent:        #D85A30;
+      --color-accent-light:  #FAECE7;
+      --color-bg:            #FAFAF8;
+      --color-surface:       #FFFFFF;
+      --color-text:          #1A1A18;
+      --color-text-muted:    #5F5E5A;
+      --color-border:        rgba(26,26,24,0.12);
+
+      --font-family: 'Plus Jakarta Sans', sans-serif;
+
+      --radius-default: 8px;
+      --radius-card:    12px;
+      --radius-pill:    999px;
+
+      --transition-color:     200ms ease;
+      --transition-transform: 300ms ease;
+
+      --space-1:  4px;
+      --space-2:  8px;
+      --space-3:  12px;
+      --space-4:  16px;
+      --space-6:  24px;
+      --space-8:  32px;
+      --space-12: 48px;
+      --space-16: 64px;
+      --space-24: 96px;
+    }
+
+    /* =====================================================
+       RESET
+    ===================================================== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      font-family: var(--font-family);
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.7;
+      font-weight: 400;
+      cursor: text;
+      overflow-x: hidden;
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: var(--color-bg); }
+    ::-webkit-scrollbar-thumb { background: var(--color-primary); border-radius: var(--radius-pill); }
+    ::-webkit-scrollbar-thumb:hover { background: #0a5442; }
+
+    /* Contextual cursors */
+    a, button, [role="button"] { cursor: pointer; }
+    .gallery-item button { cursor: crosshair; }
+
+    /* Typography */
+    h1 { font-size: clamp(36px, 6vw, 56px); line-height: 1.1; font-weight: 500; }
+    h2 { font-size: clamp(26px, 4vw, 36px); line-height: 1.2; font-weight: 500; }
+    h3 { font-size: 22px; line-height: 1.4; font-weight: 500; }
+    p  { font-size: 16px; line-height: 1.7; }
+
+    .label-text {
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    /* Focus rings — never removed */
+    :focus-visible {
+      outline: 2px solid var(--color-primary);
+      outline-offset: 2px;
+      border-radius: 2px;
+    }
+
+    /* =====================================================
+       SKIP LINK
+    ===================================================== */
+    .skip-link {
+      position: absolute;
+      top: -100%;
+      left: var(--space-4);
+      z-index: 9999;
+      padding: var(--space-2) var(--space-4);
+      background: var(--color-primary);
+      color: #fff;
+      font-weight: 500;
+      border-radius: var(--radius-default);
+      text-decoration: none;
+      transition: top var(--transition-color);
+    }
+    .skip-link:focus { top: var(--space-4); }
+
+    /* =====================================================
+       SCREEN READER ONLY
+    ===================================================== */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      white-space: nowrap;
+    }
+
+    /* =====================================================
+       LAYOUT
+    ===================================================== */
+    .container {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 var(--space-6);
+    }
+
+    .section { padding: var(--space-24) 0; }
+
+    .section-label {
+      color: var(--color-primary);
+      margin-bottom: var(--space-2);
+      display: block;
+    }
+
+    .section-heading { margin-bottom: var(--space-8); }
+
+    /* =====================================================
+       BUTTONS
+    ===================================================== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      padding: 14px 28px;
+      border-radius: var(--radius-default);
+      font-family: var(--font-family);
+      font-size: 15px;
+      font-weight: 500;
+      text-decoration: none;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: background-color var(--transition-color), color var(--transition-color), border-color var(--transition-color), opacity var(--transition-color);
+      min-height: 44px;
+      min-width: 44px;
+      white-space: nowrap;
+    }
+    .btn:active { opacity: 0.85; }
+
+    .btn-primary { background: var(--color-primary); color: #fff; border-color: var(--color-primary); }
+    .btn-primary:hover { background: #0a5442; border-color: #0a5442; }
+
+    .btn-accent { background: var(--color-accent); color: #fff; border-color: var(--color-accent); }
+    .btn-accent:hover { background: #b84a22; border-color: #b84a22; }
+
+    .btn-outline { background: transparent; color: var(--color-primary); border-color: var(--color-primary); }
+    .btn-outline:hover { background: var(--color-primary-light); }
+
+    /* =====================================================
+       HEADER / NAV
+    ===================================================== */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--color-surface);
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+
+    .nav-logo {
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--color-text);
+      text-decoration: none;
+    }
+    .nav-logo span { color: var(--color-primary); }
+
+    .nav-links { display: flex; gap: var(--space-6); list-style: none; }
+    .nav-links a {
+      color: var(--color-text-muted);
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 500;
+      transition: color var(--transition-color);
+      padding: var(--space-2) 0;
+    }
+    .nav-links a:hover { color: var(--color-primary); }
+
+    /* Hamburger */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      padding: var(--space-2);
+      min-height: 44px;
+      min-width: 44px;
+      align-items: center;
+      justify-content: center;
+    }
+    .nav-hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--color-text);
+      border-radius: 2px;
+      transition: transform var(--transition-transform), opacity var(--transition-color);
+    }
+    .nav-hamburger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+    .nav-hamburger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* Slide-in drawer */
+    .nav-drawer {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+    }
+    .nav-drawer.open { display: block; }
+
+    .nav-drawer-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(26,26,24,0.45);
+    }
+
+    .nav-drawer-panel {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: min(320px, 85vw);
+      height: 100%;
+      background: var(--color-surface);
+      border-left: 1px solid var(--color-border);
+      display: flex;
+      flex-direction: column;
+      padding: var(--space-6);
+      overflow-y: auto;
+    }
+
+    .nav-drawer-close {
+      align-self: flex-end;
+      background: none;
+      border: none;
+      font-size: 24px;
+      color: var(--color-text);
+      padding: var(--space-2);
+      min-height: 44px;
+      min-width: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: var(--space-6);
+    }
+
+    .nav-drawer-links { list-style: none; display: flex; flex-direction: column; gap: var(--space-4); }
+    .nav-drawer-links a {
+      color: var(--color-text);
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 500;
+      display: block;
+      padding: var(--space-2) 0;
+      transition: color var(--transition-color);
+    }
+    .nav-drawer-links a:hover { color: var(--color-primary); }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+    }
+
+    /* =====================================================
+       HERO
+    ===================================================== */
+    #hero {
+      position: relative;
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background: var(--color-bg);
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .hero-shape {
+      position: absolute;
+      border: 1px solid var(--color-border);
+      border-radius: 50%;
+    }
+
+    .hero-content { position: relative; z-index: 1; max-width: 780px; }
+
+    .hero-eyebrow { color: var(--color-primary); margin-bottom: var(--space-4); }
+
+    .hero-title { margin-bottom: var(--space-4); color: var(--color-text); }
+
+    .typewriter-wrapper {
+      display: block;
+      min-height: 1.2em;
+    }
+
+    .hero-tagline {
+      font-size: 18px;
+      color: var(--color-text-muted);
+      max-width: 560px;
+      margin-bottom: var(--space-8);
+    }
+
+    .hero-cta { display: flex; gap: var(--space-4); flex-wrap: wrap; }
+
+    #typewriter::after {
+      content: '|';
+      color: var(--color-accent);
+    }
+
+    /* =====================================================
+       ABOUT
+    ===================================================== */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-12);
+      align-items: start;
+    }
+
+    .about-bio p + p { margin-top: var(--space-4); }
+
+    .skill-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+      margin-top: var(--space-6);
+    }
+
+    .chip {
+      padding: 6px 14px;
+      background: var(--color-primary-light);
+      color: var(--color-primary);
+      border-radius: var(--radius-pill);
+      font-size: 13px;
+      font-weight: 500;
+      border: 1px solid rgba(15,110,86,0.2);
+      transition: background-color var(--transition-color), color var(--transition-color);
+    }
+    .chip:hover { background: var(--color-primary); color: #fff; cursor: default; }
+
+    .about-avatar {
+      width: 100%;
+      aspect-ratio: 1;
+      max-width: 320px;
+      background: var(--color-primary-light);
+      border-radius: var(--radius-card);
+      border: 1px solid var(--color-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .avatar-placeholder {
+      font-size: 80px;
+      line-height: 1;
+      color: var(--color-primary);
+      user-select: none;
+    }
+
+    @media (max-width: 768px) {
+      .about-grid { grid-template-columns: 1fr; }
+      .about-avatar { max-width: 200px; }
+    }
+
+    /* =====================================================
+       VENTURES
+    ===================================================== */
+    #ventures { background: var(--color-surface); }
+
+    .ventures-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: var(--space-6);
+    }
+
+    .venture-card {
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-card);
+      padding: var(--space-6);
+      background: var(--color-bg);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-4);
+      transition: background-color var(--transition-color);
+      color: inherit;
+    }
+    .venture-card:hover { background: var(--color-primary-light); }
+
+    .venture-logo {
+      width: 56px;
+      height: 56px;
+      border-radius: var(--radius-default);
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+    }
+
+    .venture-name { font-size: 18px; font-weight: 500; color: var(--color-text); }
+    .venture-desc { font-size: 14px; color: var(--color-text-muted); flex: 1; }
+    .venture-link-label { color: var(--color-primary); font-size: 13px; font-weight: 500; letter-spacing: 0.04em; }
+
+    /* =====================================================
+       PORTFOLIO / PROJECTS
+    ===================================================== */
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+      margin-bottom: var(--space-8);
+    }
+
+    .filter-btn {
+      padding: 8px 16px;
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--color-border);
+      background: transparent;
+      color: var(--color-text-muted);
+      font-family: var(--font-family);
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background-color var(--transition-color), color var(--transition-color), border-color var(--transition-color);
+      min-height: 44px;
+    }
+    .filter-btn:hover,
+    .filter-btn[aria-pressed="true"] {
+      background: var(--color-primary);
+      color: #fff;
+      border-color: var(--color-primary);
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: var(--space-6);
+    }
+
+    .project-card {
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-card);
+      padding: var(--space-6);
+      background: var(--color-surface);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+      transition: background-color var(--transition-color);
+    }
+    .project-card:hover { background: var(--color-bg); }
+    .project-card[hidden] { display: none; }
+
+    .project-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      align-self: flex-start;
+    }
+
+    .badge-cybersecurity { background: #E8F4F0; color: #0F6E56; }
+    .badge-design        { background: var(--color-accent-light); color: var(--color-accent); }
+    .badge-dev           { background: #EAF0FF; color: #2A5BD7; }
+    .badge-art           { background: #FFF3E0; color: #C76800; }
+    .badge-fitness       { background: #FCE8E8; color: #C0392B; }
+
+    .project-name { font-size: 17px; font-weight: 500; }
+    .project-desc { font-size: 14px; color: var(--color-text-muted); flex: 1; }
+
+    .project-links { display: flex; gap: var(--space-3); flex-wrap: wrap; margin-top: var(--space-2); }
+    .project-link {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--color-primary);
+      text-decoration: none;
+      transition: color var(--transition-color);
+    }
+    .project-link:hover { color: var(--color-accent); }
+
+    /* =====================================================
+       SKILLS
+    ===================================================== */
+    #skills { background: var(--color-surface); }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: var(--space-8);
+    }
+
+    .skill-domain h3 {
+      margin-bottom: var(--space-4);
+      font-size: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--color-primary);
+    }
+
+    .skill-item { margin-bottom: var(--space-4); }
+
+    .skill-header {
+      display: flex;
+      justify-content: space-between;
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: var(--space-1);
+    }
+
+    .skill-bar-track {
+      height: 6px;
+      background: var(--color-border);
+      border-radius: var(--radius-pill);
+      overflow: hidden;
+    }
+
+    .skill-bar-fill {
+      height: 100%;
+      background: var(--color-primary);
+      border-radius: var(--radius-pill);
+      width: 0%;
+      transition: width 1s ease;
+    }
+    .skill-bar-fill.accent { background: var(--color-accent); }
+
+    /* =====================================================
+       CERTIFICATIONS
+    ===================================================== */
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: var(--space-4);
+    }
+
+    .cert-badge {
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-card);
+      padding: var(--space-4);
+      background: var(--color-surface);
+      display: flex;
+      gap: var(--space-3);
+      align-items: flex-start;
+      transition: background-color var(--transition-color);
+    }
+    .cert-badge:hover { background: var(--color-primary-light); }
+
+    .cert-icon {
+      width: 40px;
+      height: 40px;
+      min-width: 40px;
+      border-radius: var(--radius-default);
+      background: var(--color-primary-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+    }
+
+    .cert-info h3 { font-size: 14px; font-weight: 500; line-height: 1.3; }
+    .cert-info p  { font-size: 12px; color: var(--color-text-muted); margin-top: 2px; }
+
+    /* =====================================================
+       GALLERY
+    ===================================================== */
+    #gallery { background: var(--color-surface); }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: var(--space-4);
+    }
+
+    .gallery-item {
+      border-radius: var(--radius-card);
+      overflow: hidden;
+      border: 1px solid var(--color-border);
+      aspect-ratio: 4/3;
+      background: var(--color-primary-light);
+    }
+
+    .gallery-item button {
+      width: 100%;
+      height: 100%;
+      background: none;
+      border: none;
+      padding: 0;
+      cursor: crosshair;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: var(--space-2);
+      color: var(--color-primary);
+      transition: background-color var(--transition-color);
+    }
+    .gallery-item button:hover { background: rgba(15,110,86,0.08); }
+
+    .gallery-item-icon  { font-size: 40px; }
+    .gallery-item-label { font-size: 13px; font-weight: 500; }
+
+    /* Lightbox overlay */
+    .gallery-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 500;
+      background: rgba(26,26,24,0.88);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: var(--space-8);
+    }
+    .gallery-overlay.open { display: flex; }
+
+    .gallery-lightbox {
+      background: var(--color-surface);
+      border-radius: var(--radius-card);
+      max-width: 780px;
+      width: 100%;
+      border: 1px solid var(--color-border);
+      overflow: hidden;
+    }
+
+    .lightbox-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: var(--space-4) var(--space-6);
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .lightbox-close {
+      background: none;
+      border: none;
+      font-size: 22px;
+      color: var(--color-text-muted);
+      cursor: pointer;
+      padding: var(--space-2);
+      min-height: 44px;
+      min-width: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--radius-default);
+      transition: color var(--transition-color), background-color var(--transition-color);
+    }
+    .lightbox-close:hover { color: var(--color-accent); background: var(--color-accent-light); }
+
+    .lightbox-body {
+      padding: var(--space-8);
+      background: var(--color-primary-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 280px;
+      flex-direction: column;
+      gap: var(--space-4);
+      color: var(--color-primary);
+    }
+
+    /* =====================================================
+       CONTACT
+    ===================================================== */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: var(--space-12);
+      align-items: start;
+    }
+
+    .contact-info h3 { margin-bottom: var(--space-4); }
+    .contact-info p  { color: var(--color-text-muted); margin-bottom: var(--space-6); }
+
+    .social-links { display: flex; flex-direction: column; gap: var(--space-3); list-style: none; }
+
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-3);
+      color: var(--color-text);
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 500;
+      padding: var(--space-2) 0;
+      transition: color var(--transition-color);
+    }
+    .social-link:hover { color: var(--color-primary); }
+
+    .social-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: var(--radius-default);
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+
+    /* Form */
+    .contact-form { display: flex; flex-direction: column; gap: var(--space-4); }
+
+    .form-group { display: flex; flex-direction: column; gap: var(--space-1); }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-4);
+    }
+
+    label { font-size: 14px; font-weight: 500; color: var(--color-text); }
+
+    .required-mark { color: var(--color-accent); margin-left: 2px; }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-default);
+      background: var(--color-surface);
+      color: var(--color-text);
+      font-family: var(--font-family);
+      font-size: 15px;
+      min-height: 44px;
+      transition: border-color var(--transition-color);
+    }
+    input:focus, textarea:focus {
+      outline: 2px solid var(--color-primary);
+      outline-offset: 2px;
+      border-color: var(--color-primary);
+    }
+    input.invalid, textarea.invalid { border-color: var(--color-accent); }
+
+    textarea { resize: vertical; min-height: 120px; }
+
+    .field-error { font-size: 13px; color: var(--color-accent); display: none; }
+    .field-error.visible { display: block; }
+
+    .form-success {
+      display: none;
+      padding: var(--space-6);
+      background: var(--color-primary-light);
+      border: 1px solid rgba(15,110,86,0.25);
+      border-radius: var(--radius-card);
+      color: var(--color-primary);
+      font-weight: 500;
+      text-align: center;
+    }
+    .form-success.visible { display: block; }
+
+    @media (max-width: 768px) {
+      .contact-grid { grid-template-columns: 1fr; }
+      .form-row     { grid-template-columns: 1fr; }
+    }
+
+    /* =====================================================
+       FOOTER
+    ===================================================== */
+    footer {
+      background: var(--color-text);
+      color: rgba(255,255,255,0.7);
+      padding: var(--space-12) 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: var(--space-4);
+    }
+
+    .footer-logo { color: #fff; text-decoration: none; font-size: 16px; font-weight: 500; }
+    .footer-logo span { color: var(--color-primary-light); }
+
+    .footer-nav { display: flex; gap: var(--space-6); flex-wrap: wrap; list-style: none; }
+    .footer-nav a {
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      font-size: 14px;
+      transition: color var(--transition-color);
+    }
+    .footer-nav a:hover { color: #fff; }
+
+    .footer-bottom {
+      margin-top: var(--space-8);
+      padding-top: var(--space-4);
+      border-top: 1px solid rgba(255,255,255,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: var(--space-3);
+    }
+
+    .footer-copy { font-size: 13px; }
+
+    .back-to-top {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      padding: 8px 14px;
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: var(--radius-pill);
+      transition: color var(--transition-color), border-color var(--transition-color), background-color var(--transition-color);
+      min-height: 44px;
+    }
+    .back-to-top:hover { color: #fff; border-color: rgba(255,255,255,0.5); background: rgba(255,255,255,0.05); }
+
+    /* =====================================================
+       ANIMATIONS (prefers-reduced-motion: no-preference)
+    ===================================================== */
+    @media (prefers-reduced-motion: no-preference) {
+      @keyframes blink     { 50% { opacity: 0; } }
+      @keyframes fadeInUp  { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+      @keyframes float     { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+      @keyframes rotateSlow{ from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+      /* Hero stagger */
+      .hero-eyebrow { animation: fadeInUp 0.6s ease 0.1s both; }
+      .hero-title   { animation: fadeInUp 0.6s ease 0.25s both; }
+      .hero-tagline { animation: fadeInUp 0.6s ease 0.4s  both; }
+      .hero-cta     { animation: fadeInUp 0.6s ease 0.55s both; }
+
+      /* Shapes */
+      .hero-shape-1 { animation: float       8s  ease-in-out          infinite; }
+      .hero-shape-2 { animation: float      12s  ease-in-out 2s       infinite; }
+      .hero-shape-3 { animation: rotateSlow 20s  linear               infinite; }
+
+      /* Typewriter cursor */
+      #typewriter::after { animation: blink 0.8s step-end infinite; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      #typewriter::after { display: none; }
+    }
+
+    /* =====================================================
+       RESPONSIVE
+    ===================================================== */
+    @media (max-width: 900px) { .skills-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 600px) {
+      .skills-grid     { grid-template-columns: 1fr; }
+      .ventures-grid   { grid-template-columns: 1fr 1fr; }
+      .hero-cta        { flex-direction: column; }
+      .hero-cta .btn   { width: 100%; justify-content: center; }
+      .footer-inner    { flex-direction: column; align-items: flex-start; }
+    }
+    @media (max-width: 480px) { .ventures-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+
+<body>
+  <!-- Skip to main content — first focusable element -->
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- ===================================================
+       HEADER
+  =================================================== -->
+  <header role="banner">
+    <div class="container">
+      <nav class="nav-inner" aria-label="Primary navigation">
+        <a href="#hero" class="nav-logo">Edwin<span>.</span></a>
+
+        <ul class="nav-links" role="list">
+          <li><a href="#about">About</a></li>
+          <li><a href="#ventures">Ventures</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#certifications">Certifications</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <button
+          class="nav-hamburger"
+          aria-label="Open navigation menu"
+          aria-expanded="false"
+          aria-controls="nav-drawer"
+          id="hamburger-btn"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Mobile slide-in drawer -->
+  <div
+    class="nav-drawer"
+    id="nav-drawer"
+    role="dialog"
+    aria-label="Navigation menu"
+    aria-modal="true"
+  >
+    <div class="nav-drawer-backdrop" id="drawer-backdrop" aria-hidden="true"></div>
+    <div class="nav-drawer-panel">
+      <button class="nav-drawer-close" id="drawer-close-btn" aria-label="Close navigation menu">&#x2715;</button>
+      <ul class="nav-drawer-links" role="list">
+        <li><a href="#about">About</a></li>
+        <li><a href="#ventures">Ventures</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ===================================================
+       MAIN
+  =================================================== -->
+  <main id="main-content" role="main">
+
+    <!-- HERO ============================================ -->
+    <section id="hero" aria-label="Hero introduction">
+      <div class="hero-bg" aria-hidden="true">
+        <div class="hero-shape hero-shape-1" style="width:400px;height:400px;top:-100px;right:-80px;"></div>
+        <div class="hero-shape hero-shape-2" style="width:260px;height:260px;bottom:80px;right:200px;"></div>
+        <div class="hero-shape hero-shape-3" style="width:160px;height:160px;top:40%;left:8%;"></div>
+      </div>
+      <div class="container">
+        <div class="hero-content">
+          <span class="hero-eyebrow label-text">Hello, I&rsquo;m</span>
+          <h1 class="hero-title">
+            Edwin Mburu Kamau
+            <span class="typewriter-wrapper">
+              <span
+                id="typewriter"
+                aria-live="polite"
+                aria-label="IT &amp; Cybersecurity Expert | Founder | Entrepreneur | Designer | Artist &amp; Athlete"
+              ></span>
+            </span>
+          </h1>
+          <p class="hero-tagline">
+            Building brands, securing systems, and pushing limits across every lane.
+          </p>
+          <div class="hero-cta">
+            <a href="#portfolio" class="btn btn-primary">View My Work</a>
+            <a href="#contact"   class="btn btn-outline">Get In Touch</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT =========================================== -->
+    <section id="about" class="section" aria-labelledby="about-heading">
+      <div class="container">
+        <span class="section-label label-text">About Me</span>
+        <h2 id="about-heading" class="section-heading">Who I Am</h2>
+
+        <div class="about-grid">
+          <div class="about-bio">
+            <p>
+              I&rsquo;m <strong>Edwin Mburu Kamau</strong> &mdash; an IT &amp; Cybersecurity Expert, serial entrepreneur, brand designer, professional artist, and competitive athlete based in Kenya. I operate at the intersection of technology, creativity, and business.
+            </p>
+            <p>
+              As the founder of <strong>SOPHIA</strong> (AI &amp; cybersecurity solutions), <strong>Urban Crew Apparel</strong>, <strong>Revhood Automotive</strong>, and <strong>Brotherhood Fitness</strong>, I&rsquo;ve built ecosystems spanning digital security, fashion, automotive culture, and sport.
+            </p>
+            <p>
+              My philosophy: mastery is not a destination &mdash; it&rsquo;s the daily commitment to excellence in every lane you choose to run.
+            </p>
+
+            <div class="skill-chips" role="list" aria-label="Disciplines">
+              <span class="chip" role="listitem">Cybersecurity</span>
+              <span class="chip" role="listitem">Network Engineering</span>
+              <span class="chip" role="listitem">Brand Design</span>
+              <span class="chip" role="listitem">Web Development</span>
+              <span class="chip" role="listitem">Entrepreneurship</span>
+              <span class="chip" role="listitem">UI / UX Design</span>
+              <span class="chip" role="listitem">Digital Art</span>
+              <span class="chip" role="listitem">Athletics &amp; Fitness</span>
+              <span class="chip" role="listitem">Photography</span>
+              <span class="chip" role="listitem">Automotive Culture</span>
+            </div>
+
+            <div style="margin-top: var(--space-8);">
+              <button
+                class="btn btn-accent"
+                disabled
+                aria-disabled="true"
+                title="CV coming soon"
+                style="opacity:0.65;cursor:not-allowed;"
+              >
+                &#8595;&nbsp; Download CV
+                <span style="font-size:12px;margin-left:4px;">(coming soon)</span>
+              </button>
+            </div>
+          </div>
+
+          <div>
+            <div
+              class="about-avatar"
+              role="img"
+              aria-label="Profile photo placeholder for Edwin Mburu Kamau"
+            >
+              <span class="avatar-placeholder" aria-hidden="true">&#128100;</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VENTURES ======================================== -->
+    <section id="ventures" class="section" aria-labelledby="ventures-heading">
+      <div class="container">
+        <span class="section-label label-text">My Ventures</span>
+        <h2 id="ventures-heading" class="section-heading">What I&rsquo;ve Built</h2>
+
+        <div class="ventures-grid">
+
+          <div class="venture-card" aria-label="SOPHIA &mdash; AI &amp; Cybersecurity Solutions">
+            <div class="venture-logo" aria-hidden="true">&#128274;</div>
+            <div>
+              <div class="venture-name">SOPHIA</div>
+              <p class="venture-desc">AI-powered cybersecurity solutions protecting organisations and individuals across the digital frontier.</p>
+              <span class="venture-link-label">Coming soon</span>
+            </div>
+          </div>
+
+          <div class="venture-card" aria-label="Urban Crew Apparel &mdash; Streetwear brand">
+            <div class="venture-logo" aria-hidden="true">&#128083;</div>
+            <div>
+              <div class="venture-name">Urban Crew Apparel</div>
+              <p class="venture-desc">A streetwear brand rooted in authenticity, culture, and bold self-expression for the urban generation.</p>
+              <span class="venture-link-label">Coming soon</span>
+            </div>
+          </div>
+
+          <div class="venture-card" aria-label="Revhood Automotive &mdash; Car culture and services">
+            <div class="venture-logo" aria-hidden="true">&#128664;</div>
+            <div>
+              <div class="venture-name">Revhood Automotive</div>
+              <p class="venture-desc">Celebrating car culture through builds, events, detailing services, and a passionate enthusiast community.</p>
+              <span class="venture-link-label">Coming soon</span>
+            </div>
+          </div>
+
+          <div class="venture-card" aria-label="Brotherhood Fitness &mdash; Training and wellness">
+            <div class="venture-logo" aria-hidden="true">&#127947;</div>
+            <div>
+              <div class="venture-name">Brotherhood Fitness</div>
+              <p class="venture-desc">Training programmes, nutrition coaching, and community-driven fitness transformation for men who lead.</p>
+              <span class="venture-link-label">Coming soon</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO ======================================= -->
+    <section id="portfolio" class="section" aria-labelledby="portfolio-heading">
+      <div class="container">
+        <span class="section-label label-text">Portfolio</span>
+        <h2 id="portfolio-heading" class="section-heading">Selected Projects</h2>
+
+        <div class="filter-bar" role="group" aria-label="Filter projects by category">
+          <button class="filter-btn" data-filter="all"           aria-pressed="true" >All</button>
+          <button class="filter-btn" data-filter="cybersecurity" aria-pressed="false">Cybersecurity</button>
+          <button class="filter-btn" data-filter="design"        aria-pressed="false">Design</button>
+          <button class="filter-btn" data-filter="dev"           aria-pressed="false">Dev</button>
+          <button class="filter-btn" data-filter="art"           aria-pressed="false">Art</button>
+          <button class="filter-btn" data-filter="fitness"       aria-pressed="false">Fitness</button>
+        </div>
+
+        <div class="projects-grid" id="projects-grid">
+
+          <article class="project-card" data-category="cybersecurity" aria-label="Project: SOPHIA Security Platform">
+            <span class="project-badge badge-cybersecurity">Cybersecurity</span>
+            <h3 class="project-name">SOPHIA Security Platform</h3>
+            <p class="project-desc">Full-stack threat intelligence and incident response platform with AI-assisted anomaly detection for SMEs.</p>
+            <div class="project-links">
+              <span class="project-link" style="opacity:0.5;cursor:default;">GitHub (coming soon)</span>
+              <span class="project-link" style="opacity:0.5;cursor:default;">Live Demo (coming soon)</span>
+            </div>
+          </article>
+
+          <article class="project-card" data-category="cybersecurity" aria-label="Project: Network Penetration Toolkit">
+            <span class="project-badge badge-cybersecurity">Cybersecurity</span>
+            <h3 class="project-name">Network Penetration Toolkit</h3>
+            <p class="project-desc">Custom Python-based pen-testing toolkit for internal network auditing with automated reporting outputs.</p>
+            <div class="project-links">
+              <span class="project-link" style="opacity:0.5;cursor:default;">GitHub (coming soon)</span>
+            </div>
+          </article>
+
+          <article class="project-card" data-category="design" aria-label="Project: Urban Crew Brand Identity">
+            <span class="project-badge badge-design">Design</span>
+            <h3 class="project-name">Urban Crew Brand Identity</h3>
+            <p class="project-desc">Complete visual identity system: logo, typography, colour palette, packaging, and brand guidelines.</p>
+            <div class="project-links">
+              <span class="project-link" style="opacity:0.5;cursor:default;">Case Study (coming soon)</span>
+            </div>
+          </article>
+
+          <article class="project-card" data-category="dev" aria-label="Project: Personal Portfolio">
+            <span class="project-badge badge-dev">Dev</span>
+            <h3 class="project-name">Personal Portfolio</h3>
+            <p class="project-desc">This site &mdash; single-file, zero-dependency, WCAG 2.1 AA accessible portfolio built with HTML, CSS &amp; vanilla JS.</p>
+            <div class="project-links">
+              <a href="https://github.com/cyber-urbanrebel/PORTFOLIO" class="project-link" aria-label="View Portfolio source code on GitHub">GitHub &rarr;</a>
+            </div>
+          </article>
+
+          <article class="project-card" data-category="dev" aria-label="Project: Revhood Web App">
+            <span class="project-badge badge-dev">Dev</span>
+            <h3 class="project-name">Revhood Web App</h3>
+            <p class="project-desc">Progressive web app for Revhood Automotive &mdash; bookings, gallery, events, and community forum.</p>
+            <div class="project-links">
+              <span class="project-link" style="opacity:0.5;cursor:default;">GitHub (coming soon)</span>
+              <span class="project-link" style="opacity:0.5;cursor:default;">Live (coming soon)</span>
+            </div>
+          </article>
+
+          <article class="project-card" data-category="art" aria-label="Project: Digital Art Collection">
+            <span class="project-badge badge-art">Art</span>
+            <h3 class="project-name">Digital Art Collection</h3>
+            <p class="project-desc">A curated series of digital illustrations exploring urban identity, motion, and African futurism.</p>
+            <div class="project-links">
+              <span class="project-link" style="opacity:0.5;cursor:default;">Gallery (coming soon)</span>
+            </div>
+          </article>
+
+          <article class="project-card" data-category="art" aria-label="Project: Automotive Photography Series">
+            <span class="project-badge badge-art">Art</span>
+            <h3 class="project-name">Automotive Photography</h3>
+            <p class="project-desc">High-resolution automotive photography series shot across Nairobi &mdash; culture, machines, and motion.</p>
+            <div class="project-links">
+              <span class="project-link" style="opacity:0.5;cursor:default;">Portfolio (coming soon)</span>
+            </div>
+          </article>
+
+          <article class="project-card" data-category="fitness" aria-label="Project: Brotherhood Fitness App">
+            <span class="project-badge badge-fitness">Fitness</span>
+            <h3 class="project-name">Brotherhood Fitness App</h3>
+            <p class="project-desc">Mobile-first workout tracker and nutrition planner built for the Brotherhood Fitness community.</p>
+            <div class="project-links">
+              <span class="project-link" style="opacity:0.5;cursor:default;">GitHub (coming soon)</span>
+            </div>
+          </article>
+
+          <article class="project-card" data-category="design" aria-label="Project: Revhood Visual Identity">
+            <span class="project-badge badge-design">Design</span>
+            <h3 class="project-name">Revhood Visual Identity</h3>
+            <p class="project-desc">Bold automotive brand identity with custom logotype, signage system, livery design, and merchandise.</p>
+            <div class="project-links">
+              <span class="project-link" style="opacity:0.5;cursor:default;">Case Study (coming soon)</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS ========================================== -->
+    <section id="skills" class="section" aria-labelledby="skills-heading">
+      <div class="container">
+        <span class="section-label label-text">Expertise</span>
+        <h2 id="skills-heading" class="section-heading">Skills &amp; Capabilities</h2>
+
+        <div class="skills-grid">
+
+          <div class="skill-domain">
+            <h3>IT &amp; Cybersecurity</h3>
+            <div class="skill-item">
+              <div class="skill-header"><span>Network Security</span><span aria-hidden="true">92%</span></div>
+              <div class="skill-bar-track" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100" aria-label="Network Security: 92%">
+                <div class="skill-bar-fill" data-width="92"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-header"><span>Penetration Testing</span><span aria-hidden="true">88%</span></div>
+              <div class="skill-bar-track" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100" aria-label="Penetration Testing: 88%">
+                <div class="skill-bar-fill" data-width="88"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-header"><span>Incident Response</span><span aria-hidden="true">85%</span></div>
+              <div class="skill-bar-track" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" aria-label="Incident Response: 85%">
+                <div class="skill-bar-fill" data-width="85"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-header"><span>Cloud Security (AWS/GCP)</span><span aria-hidden="true">78%</span></div>
+              <div class="skill-bar-track" role="progressbar" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100" aria-label="Cloud Security: 78%">
+                <div class="skill-bar-fill" data-width="78"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-domain">
+            <h3>Web Design &amp; Dev</h3>
+            <div class="skill-item">
+              <div class="skill-header"><span>HTML / CSS</span><span aria-hidden="true">95%</span></div>
+              <div class="skill-bar-track" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" aria-label="HTML / CSS: 95%">
+                <div class="skill-bar-fill" data-width="95"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-header"><span>JavaScript / TypeScript</span><span aria-hidden="true">85%</span></div>
+              <div class="skill-bar-track" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" aria-label="JavaScript / TypeScript: 85%">
+                <div class="skill-bar-fill" data-width="85"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-header"><span>UI / UX Design</span><span aria-hidden="true">90%</span></div>
+              <div class="skill-bar-track" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" aria-label="UI / UX Design: 90%">
+                <div class="skill-bar-fill" data-width="90"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-header"><span>Python</span><span aria-hidden="true">80%</span></div>
+              <div class="skill-bar-track" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" aria-label="Python: 80%">
+                <div class="skill-bar-fill" data-width="80"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-domain">
+            <h3>Branding &amp; Art</h3>
+            <div class="skill-item">
+              <div class="skill-header"><span>Brand Identity Design</span><span aria-hidden="true">93%</span></div>
+              <div class="skill-bar-track" role="progressbar" aria-valuenow="93" aria-valuemin="0" aria-valuemax="100" aria-label="Brand Identity Design: 93%">
+                <div class="skill-bar-fill accent" data-width="93"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-header"><span>Digital Illustration</span><span aria-hidden="true">87%</span></div>
+              <div class="skill-bar-track" role="progressbar" aria-valuenow="87" aria-valuemin="0" aria-valuemax="100" aria-label="Digital Illustration: 87%">
+                <div class="skill-bar-fill accent" data-width="87"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-header"><span>Photography</span><span aria-hidden="true">84%</span></div>
+              <div class="skill-bar-track" role="progressbar" aria-valuenow="84" aria-valuemin="0" aria-valuemax="100" aria-label="Photography: 84%">
+                <div class="skill-bar-fill accent" data-width="84"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-header"><span>Motion Graphics</span><span aria-hidden="true">72%</span></div>
+              <div class="skill-bar-track" role="progressbar" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100" aria-label="Motion Graphics: 72%">
+                <div class="skill-bar-fill accent" data-width="72"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-domain">
+            <h3>Business &amp; Entrepreneurship</h3>
+            <div class="skill-item">
+              <div class="skill-header"><span>Strategic Leadership</span><span aria-hidden="true">90%</span></div>
+              <div class="skill-bar-track" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" aria-label="Strategic Leadership: 90%">
+                <div class="skill-bar-fill accent" data-width="90"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-header"><span>Product Management</span><span aria-hidden="true">82%</span></div>
+              <div class="skill-bar-track" role="progressbar" aria-valuenow="82" aria-valuemin="0" aria-valuemax="100" aria-label="Product Management: 82%">
+                <div class="skill-bar-fill accent" data-width="82"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-header"><span>Marketing &amp; Growth</span><span aria-hidden="true">85%</span></div>
+              <div class="skill-bar-track" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" aria-label="Marketing &amp; Growth: 85%">
+                <div class="skill-bar-fill accent" data-width="85"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-header"><span>Business Development</span><span aria-hidden="true">88%</span></div>
+              <div class="skill-bar-track" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100" aria-label="Business Development: 88%">
+                <div class="skill-bar-fill accent" data-width="88"></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS ================================== -->
+    <section id="certifications" class="section" aria-labelledby="certs-heading">
+      <div class="container">
+        <span class="section-label label-text">Credentials</span>
+        <h2 id="certs-heading" class="section-heading">Certifications &amp; Achievements</h2>
+
+        <div class="cert-grid">
+
+          <div class="cert-badge">
+            <div class="cert-icon" aria-hidden="true">&#127942;</div>
+            <div class="cert-info">
+              <h3>CompTIA Security+</h3>
+              <p>CompTIA &bull; 2023</p>
+            </div>
+          </div>
+
+          <div class="cert-badge">
+            <div class="cert-icon" aria-hidden="true">&#127942;</div>
+            <div class="cert-info">
+              <h3>Certified Ethical Hacker (CEH)</h3>
+              <p>EC-Council &bull; 2023</p>
+            </div>
+          </div>
+
+          <div class="cert-badge">
+            <div class="cert-icon" aria-hidden="true">&#127942;</div>
+            <div class="cert-info">
+              <h3>Google Cybersecurity Certificate</h3>
+              <p>Google &bull; 2022</p>
+            </div>
+          </div>
+
+          <div class="cert-badge">
+            <div class="cert-icon" aria-hidden="true">&#127942;</div>
+            <div class="cert-info">
+              <h3>AWS Cloud Practitioner</h3>
+              <p>Amazon Web Services &bull; 2023</p>
+            </div>
+          </div>
+
+          <div class="cert-badge">
+            <div class="cert-icon" aria-hidden="true">&#127775;</div>
+            <div class="cert-info">
+              <h3>Founder &mdash; 4 Active Ventures</h3>
+              <p>SOPHIA &bull; Urban Crew &bull; Revhood &bull; Brotherhood</p>
+            </div>
+          </div>
+
+          <div class="cert-badge">
+            <div class="cert-icon" aria-hidden="true">&#127919;</div>
+            <div class="cert-info">
+              <h3>National Athletics Competitor</h3>
+              <p>Kenya Athletics &bull; 2019&ndash;Present</p>
+            </div>
+          </div>
+
+          <div class="cert-badge">
+            <div class="cert-icon" aria-hidden="true">&#127775;</div>
+            <div class="cert-info">
+              <h3>Google UX Design Certificate</h3>
+              <p>Google &bull; 2022</p>
+            </div>
+          </div>
+
+          <div class="cert-badge">
+            <div class="cert-icon" aria-hidden="true">&#127942;</div>
+            <div class="cert-info">
+              <h3>Cisco CCNA</h3>
+              <p>Cisco &bull; 2022</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY ========================================= -->
+    <section id="gallery" class="section" aria-labelledby="gallery-heading">
+      <div class="container">
+        <span class="section-label label-text">Art &amp; Design</span>
+        <h2 id="gallery-heading" class="section-heading">Design Showcase</h2>
+
+        <div class="gallery-grid" role="list">
+
+          <div class="gallery-item" role="listitem">
+            <button
+              class="gallery-btn"
+              data-title="Urban Crew Apparel — Brand Identity System"
+              data-icon="👜"
+              data-desc="Full brand identity design including logo, colour palette, typography, and packaging."
+              aria-label="View Urban Crew Apparel Brand Identity System"
+            >
+              <span class="gallery-item-icon" aria-hidden="true">&#128083;</span>
+              <span class="gallery-item-label">Brand Identity</span>
+            </button>
+          </div>
+
+          <div class="gallery-item" role="listitem">
+            <button
+              class="gallery-btn"
+              data-title="African Futurism — Digital Illustration Series"
+              data-icon="🌌"
+              data-desc="Digital illustration series exploring African identity, technology, and the future."
+              aria-label="View African Futurism Digital Illustration Series"
+            >
+              <span class="gallery-item-icon" aria-hidden="true">&#127756;</span>
+              <span class="gallery-item-label">Digital Art</span>
+            </button>
+          </div>
+
+          <div class="gallery-item" role="listitem">
+            <button
+              class="gallery-btn"
+              data-title="Revhood Automotive — Photography Series"
+              data-icon="🚗"
+              data-desc="High-resolution automotive photography capturing machine aesthetics and urban motion in Nairobi."
+              aria-label="View Revhood Automotive Photography Series"
+            >
+              <span class="gallery-item-icon" aria-hidden="true">&#128664;</span>
+              <span class="gallery-item-label">Photography</span>
+            </button>
+          </div>
+
+          <div class="gallery-item" role="listitem">
+            <button
+              class="gallery-btn"
+              data-title="SOPHIA — UI/UX Dashboard Design"
+              data-icon="🔒"
+              data-desc="Security operations dashboard UI design with dark theme, real-time data visualisation and accessible components."
+              aria-label="View SOPHIA UI/UX Dashboard Design"
+            >
+              <span class="gallery-item-icon" aria-hidden="true">&#128274;</span>
+              <span class="gallery-item-label">UI Design</span>
+            </button>
+          </div>
+
+          <div class="gallery-item" role="listitem">
+            <button
+              class="gallery-btn"
+              data-title="Brotherhood Fitness — Brand &amp; Apparel"
+              data-icon="🏋"
+              data-desc="Athletic wear design and brand identity for Brotherhood Fitness, combining performance and streetwear aesthetics."
+              aria-label="View Brotherhood Fitness Brand and Apparel"
+            >
+              <span class="gallery-item-icon" aria-hidden="true">&#127947;</span>
+              <span class="gallery-item-label">Apparel Design</span>
+            </button>
+          </div>
+
+          <div class="gallery-item" role="listitem">
+            <button
+              class="gallery-btn"
+              data-title="Urban Typography — Poster Series"
+              data-icon="🎨"
+              data-desc="Limited edition poster series blending Nairobi street culture with bold typographic expression."
+              aria-label="View Urban Typography Poster Series"
+            >
+              <span class="gallery-item-icon" aria-hidden="true">&#127912;</span>
+              <span class="gallery-item-label">Poster Design</span>
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Lightbox dialog -->
+    <div
+      class="gallery-overlay"
+      id="gallery-overlay"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="lightbox-title"
+      tabindex="-1"
+    >
+      <div class="gallery-lightbox">
+        <div class="lightbox-header">
+          <h3 id="lightbox-title">Artwork</h3>
+          <button class="lightbox-close" id="lightbox-close-btn" aria-label="Close image viewer">&#x2715;</button>
+        </div>
+        <div class="lightbox-body" id="lightbox-body" aria-live="polite"></div>
+      </div>
+    </div>
+
+    <!-- CONTACT ========================================= -->
+    <section id="contact" class="section" aria-labelledby="contact-heading">
+      <div class="container">
+        <span class="section-label label-text">Get In Touch</span>
+        <h2 id="contact-heading" class="section-heading">Let&rsquo;s Connect</h2>
+
+        <div class="contact-grid">
+
+          <div class="contact-info">
+            <h3>Open to opportunities</h3>
+            <p>
+              Whether you have a project in mind, a business proposition, a collaboration, or just want to connect &mdash; my inbox is always open.
+            </p>
+
+            <nav aria-label="Social media links">
+              <ul class="social-links" role="list">
+                <li>
+                  <a
+                    href="https://github.com/cyber-urbanrebel"
+                    class="social-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Edwin Mburu Kamau on GitHub (opens in new tab)"
+                  >
+                    <span class="social-icon" aria-hidden="true">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" focusable="false" aria-hidden="true">
+                        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/>
+                      </svg>
+                    </span>
+                    GitHub
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://linkedin.com/in/edwinmburukamau"
+                    class="social-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Edwin Mburu Kamau on LinkedIn (opens in new tab)"
+                  >
+                    <span class="social-icon" aria-hidden="true">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" focusable="false" aria-hidden="true">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                      </svg>
+                    </span>
+                    LinkedIn
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://instagram.com/cyber_urbanrebel"
+                    class="social-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Edwin Mburu Kamau on Instagram (opens in new tab)"
+                  >
+                    <span class="social-icon" aria-hidden="true">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" focusable="false" aria-hidden="true">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                      </svg>
+                    </span>
+                    Instagram
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+
+          <div>
+            <form
+              class="contact-form"
+              id="contact-form"
+              novalidate
+              aria-label="Send a message to Edwin"
+            >
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="contact-name">
+                    Name<span class="required-mark" aria-hidden="true">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    id="contact-name"
+                    name="name"
+                    autocomplete="name"
+                    required
+                    aria-required="true"
+                    aria-describedby="name-error"
+                    placeholder="Your name"
+                  />
+                  <span id="name-error" class="field-error" role="alert"></span>
+                </div>
+
+                <div class="form-group">
+                  <label for="contact-email">
+                    Email<span class="required-mark" aria-hidden="true">*</span>
+                  </label>
+                  <input
+                    type="email"
+                    id="contact-email"
+                    name="email"
+                    autocomplete="email"
+                    required
+                    aria-required="true"
+                    aria-describedby="email-error"
+                    placeholder="your@email.com"
+                  />
+                  <span id="email-error" class="field-error" role="alert"></span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-subject">
+                  Subject<span class="required-mark" aria-hidden="true">*</span>
+                </label>
+                <input
+                  type="text"
+                  id="contact-subject"
+                  name="subject"
+                  required
+                  aria-required="true"
+                  aria-describedby="subject-error"
+                  placeholder="What is this about?"
+                />
+                <span id="subject-error" class="field-error" role="alert"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-message">
+                  Message<span class="required-mark" aria-hidden="true">*</span>
+                </label>
+                <textarea
+                  id="contact-message"
+                  name="message"
+                  rows="5"
+                  required
+                  aria-required="true"
+                  aria-describedby="message-error"
+                  placeholder="Your message..."
+                ></textarea>
+                <span id="message-error" class="field-error" role="alert"></span>
+              </div>
+
+              <div>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+              </div>
+
+              <div class="form-success" id="form-success" role="status" aria-live="polite">
+                &#10003;&nbsp; Thank you! Your message has been sent. I&rsquo;ll be in touch soon.
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================================================
+       FOOTER
+  =================================================== -->
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="footer-inner">
+        <a href="#hero" class="footer-logo">Edwin<span>.</span></a>
+
+        <nav aria-label="Footer navigation">
+          <ul class="footer-nav" role="list">
+            <li><a href="#about">About</a></li>
+            <li><a href="#ventures">Ventures</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy">
+          &copy; <span id="year"></span> Edwin Mburu Kamau. All rights reserved.
+        </p>
+        <a href="#hero" class="back-to-top" aria-label="Back to top of page">
+          &#8593; Back to top
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================================================
+       JAVASCRIPT
+  =================================================== -->
+  <script>
+    'use strict';
+
+    /* --------------------------------------------------
+       CURRENT YEAR
+    -------------------------------------------------- */
+    var yearEl = document.getElementById('year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+    /* --------------------------------------------------
+       TYPEWRITER EFFECT
+    -------------------------------------------------- */
+    (function () {
+      var el = document.getElementById('typewriter');
+      if (!el) return;
+
+      var titles = [
+        'IT & Cybersecurity Expert',
+        'Founder & Entrepreneur',
+        'Brand Designer',
+        'Digital Artist',
+        'Professional Athlete'
+      ];
+
+      var titleIdx   = 0;
+      var charIdx    = 0;
+      var isDeleting = false;
+
+      function tick() {
+        var current = titles[titleIdx];
+        charIdx += isDeleting ? -1 : 1;
+        el.textContent = current.slice(0, charIdx);
+
+        if (!isDeleting && charIdx === current.length) {
+          isDeleting = true;
+          setTimeout(tick, 1800);
+          return;
+        }
+        if (isDeleting && charIdx === 0) {
+          isDeleting = false;
+          titleIdx = (titleIdx + 1) % titles.length;
+          setTimeout(tick, 400);
+          return;
+        }
+        setTimeout(tick, isDeleting ? 50 : 90);
+      }
+
+      setTimeout(tick, 600);
+    }());
+
+    /* --------------------------------------------------
+       MOBILE NAV DRAWER
+    -------------------------------------------------- */
+    (function () {
+      var hamburger  = document.getElementById('hamburger-btn');
+      var drawer     = document.getElementById('nav-drawer');
+      var backdrop   = document.getElementById('drawer-backdrop');
+      var closeBtn   = document.getElementById('drawer-close-btn');
+      var drawerLinks = drawer.querySelectorAll('.nav-drawer-links a');
+
+      function openDrawer() {
+        drawer.classList.add('open');
+        hamburger.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+        closeBtn.focus();
+      }
+
+      function closeDrawer() {
+        drawer.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+        hamburger.focus();
+      }
+
+      hamburger.addEventListener('click', openDrawer);
+      closeBtn.addEventListener('click', closeDrawer);
+      backdrop.addEventListener('click', closeDrawer);
+      drawerLinks.forEach(function (link) { link.addEventListener('click', closeDrawer); });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && drawer.classList.contains('open')) closeDrawer();
+      });
+
+      /* Focus trap */
+      drawer.addEventListener('keydown', function (e) {
+        if (e.key !== 'Tab') return;
+        var focusable = Array.from(drawer.querySelectorAll('button, a[href]'));
+        var first = focusable[0];
+        var last  = focusable[focusable.length - 1];
+        if (e.shiftKey) {
+          if (document.activeElement === first) { e.preventDefault(); last.focus(); }
+        } else {
+          if (document.activeElement === last)  { e.preventDefault(); first.focus(); }
+        }
+      });
+    }());
+
+    /* --------------------------------------------------
+       PROJECT FILTER
+    -------------------------------------------------- */
+    (function () {
+      var filterBtns = document.querySelectorAll('.filter-btn');
+      var cards      = document.querySelectorAll('.project-card');
+
+      filterBtns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var filter = btn.dataset.filter;
+          filterBtns.forEach(function (b) { b.setAttribute('aria-pressed', 'false'); });
+          btn.setAttribute('aria-pressed', 'true');
+          cards.forEach(function (card) {
+            var show = filter === 'all' || card.dataset.category === filter;
+            if (show) { card.removeAttribute('hidden'); }
+            else      { card.setAttribute('hidden', ''); }
+          });
+        });
+      });
+    }());
+
+    /* --------------------------------------------------
+       SKILL BAR ANIMATION (IntersectionObserver)
+    -------------------------------------------------- */
+    (function () {
+      var fills = document.querySelectorAll('.skill-bar-fill');
+      var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      if (prefersReduced) {
+        fills.forEach(function (fill) { fill.style.width = fill.dataset.width + '%'; });
+        return;
+      }
+
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.style.width = entry.target.dataset.width + '%';
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2 });
+
+      fills.forEach(function (fill) { observer.observe(fill); });
+    }());
+
+    /* --------------------------------------------------
+       LIGHTBOX
+    -------------------------------------------------- */
+    var _lastFocused = null;
+
+    function openLightbox(title, icon, desc) {
+      _lastFocused = document.activeElement;
+      document.getElementById('lightbox-title').textContent = title;
+      var body = document.getElementById('lightbox-body');
+
+      /* Build content via DOM to avoid XSS */
+      while (body.firstChild) body.removeChild(body.firstChild);
+
+      var iconSpan = document.createElement('span');
+      iconSpan.setAttribute('style', 'font-size:64px');
+      iconSpan.setAttribute('aria-hidden', 'true');
+      iconSpan.textContent = icon;
+
+      var descP = document.createElement('p');
+      descP.setAttribute('style', 'font-size:15px;color:var(--color-text-muted);max-width:440px;text-align:center;line-height:1.6');
+      descP.textContent = desc;
+
+      body.appendChild(iconSpan);
+      body.appendChild(descP);
+      var overlay = document.getElementById('gallery-overlay');
+      overlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      overlay.focus();
+      document.addEventListener('keydown', _lightboxKeyHandler);
+    }
+
+    function closeLightbox() {
+      var overlay = document.getElementById('gallery-overlay');
+      overlay.classList.remove('open');
+      document.body.style.overflow = '';
+      document.removeEventListener('keydown', _lightboxKeyHandler);
+      if (_lastFocused) { _lastFocused.focus(); _lastFocused = null; }
+    }
+
+    function _lightboxKeyHandler(e) {
+      if (e.key === 'Escape') { closeLightbox(); return; }
+      if (e.key === 'Tab') {
+        var overlay   = document.getElementById('gallery-overlay');
+        var focusable = Array.from(overlay.querySelectorAll('button, [href], [tabindex]:not([tabindex="-1"])'));
+        var first = focusable[0];
+        var last  = focusable[focusable.length - 1];
+        if (e.shiftKey) {
+          if (document.activeElement === first) { e.preventDefault(); last.focus(); }
+        } else {
+          if (document.activeElement === last)  { e.preventDefault(); first.focus(); }
+        }
+      }
+    }
+
+    document.getElementById('gallery-overlay').addEventListener('click', function (e) {
+      if (e.target === this) closeLightbox();
+    });
+    document.getElementById('lightbox-close-btn').addEventListener('click', closeLightbox);
+
+    /* Wire up gallery buttons via addEventListener (no inline onclick) */
+    document.querySelectorAll('.gallery-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        openLightbox(
+          btn.dataset.title || '',
+          btn.dataset.icon  || '',
+          btn.dataset.desc  || ''
+        );
+      });
+    });
+
+    /* --------------------------------------------------
+       CONTACT FORM VALIDATION
+    -------------------------------------------------- */
+    (function () {
+      var form       = document.getElementById('contact-form');
+      var successMsg = document.getElementById('form-success');
+
+      /* RFC 5321-compatible email pattern */
+      var EMAIL_REGEX = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$/;
+
+      function showError(errorId, msg) {
+        var el = document.getElementById(errorId);
+        if (!el) return;
+        el.textContent = msg;
+        el.classList.add('visible');
+      }
+
+      function clearError(errorId) {
+        var el = document.getElementById(errorId);
+        if (!el) return;
+        el.textContent = '';
+        el.classList.remove('visible');
+      }
+
+      function validateField(field) {
+        var val     = field.value.trim();
+        var id      = field.id;
+        var errId   = id.replace('contact-', '') + '-error';
+
+        clearError(errId);
+        field.classList.remove('invalid');
+        field.removeAttribute('aria-invalid');
+
+        if (field.required && !val) {
+          showError(errId, 'This field is required.');
+          field.classList.add('invalid');
+          field.setAttribute('aria-invalid', 'true');
+          return false;
+        }
+        if (id === 'contact-email' && val && !EMAIL_REGEX.test(val)) {
+          showError(errId, 'Please enter a valid email address.');
+          field.classList.add('invalid');
+          field.setAttribute('aria-invalid', 'true');
+          return false;
+        }
+        return true;
+      }
+
+      var fields = form.querySelectorAll('input, textarea');
+      fields.forEach(function (field) {
+        field.addEventListener('blur',  function () { validateField(field); });
+        field.addEventListener('input', function () {
+          if (field.classList.contains('invalid')) validateField(field);
+        });
+      });
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var valid = true;
+        fields.forEach(function (field) { if (!validateField(field)) valid = false; });
+        if (valid) {
+          /* Use aria-hidden rather than display:none so screen readers
+             can track the DOM transition and announce the status message */
+          form.setAttribute('aria-hidden', 'true');
+          form.style.visibility = 'hidden';
+          form.style.position   = 'absolute';
+          successMsg.classList.add('visible');
+          successMsg.focus();
+        }
+      });
+    }());
+
+    /* --------------------------------------------------
+       SCROLL SPY (active nav link)
+    -------------------------------------------------- */
+    (function () {
+      var sections  = document.querySelectorAll('section[id]');
+      var navLinks  = document.querySelectorAll('.nav-links a');
+
+      window.addEventListener('scroll', function () {
+        var scrollY = window.scrollY + 80;
+        sections.forEach(function (section) {
+          var top    = section.offsetTop;
+          var bottom = top + section.offsetHeight;
+          if (scrollY >= top && scrollY < bottom) {
+            navLinks.forEach(function (link) {
+              link.style.color = link.getAttribute('href') === '#' + section.id
+                ? 'var(--color-primary)'
+                : '';
+            });
+          }
+        });
+      }, { passive: true });
+    }());
+  </script>
+
+  <!-- Service Worker registration -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('sw.js')
+          .catch(function (err) {
+            /* SW registration failed — site still works, just without offline support */
+            console.warn('Service worker registration failed:', err);
+          });
+      });
+    }
+  </script>
+</body>
+</html>

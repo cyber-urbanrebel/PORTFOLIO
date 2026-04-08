@@ -1,0 +1,43 @@
+{
+  "name": "Edwin Mburu Kamau — Portfolio",
+  "short_name": "Edwin K.",
+  "description": "IT & Cybersecurity Expert | Founder of SOPHIA, Urban Crew Apparel, Revhood Automotive & Brotherhood Fitness | Entrepreneur · Designer · Professional Artist & Athlete",
+  "start_url": "/PORTFOLIO/",
+  "scope": "/PORTFOLIO/",
+  "display": "standalone",
+  "orientation": "any",
+  "theme_color": "#0F6E56",
+  "background_color": "#FAFAF8",
+  "lang": "en",
+  "categories": ["portfolio", "business", "productivity"],
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "icons/screenshot-wide.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Edwin Mburu Kamau Portfolio — Desktop"
+    },
+    {
+      "src": "icons/screenshot-narrow.png",
+      "sizes": "390x844",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Edwin Mburu Kamau Portfolio — Mobile"
+    }
+  ]
+}
