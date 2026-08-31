@@ -1,0 +1,149 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#root {
+  background: #0c0c0c;
+  font-family: "Kanit", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: #d7e2ea;
+  overflow-x: clip;
+}
+
+::selection {
+  background: #b600a8;
+  color: #fff;
+}
+
+.hero-heading {
+  background: linear-gradient(180deg, #646973 0%, #bbccd7 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.grain {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  opacity: 0.045;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.portrait-gaze {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+}
+
+.portrait-eye {
+  position: absolute;
+  overflow: hidden;
+  border-radius: 50% 50% 46% 46%;
+  clip-path: ellipse(49% 44% at 50% 54%);
+}
+
+.portrait-eye-plate {
+  position: absolute;
+  max-width: none;
+  max-height: none;
+  display: block;
+  will-change: transform;
+}
+
+.portrait-float {
+  mix-blend-mode: lighten;
+  -webkit-mask-image: radial-gradient(ellipse 68% 82% at 50% 36%, #000 46%, transparent 74%);
+  mask-image: radial-gradient(ellipse 68% 82% at 50% 36%, #000 46%, transparent 74%);
+  filter: drop-shadow(0 50px 40px rgba(12, 12, 12, 0.35));
+}
+
+.portrait-aura {
+  pointer-events: none;
+  position: absolute;
+  left: 50%;
+  top: 42%;
+  height: 70%;
+  width: 80%;
+  translate: -50% -50%;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(87, 216, 255, 0.22) 0%, rgba(182, 0, 168, 0.08) 42%, transparent 70%);
+  filter: blur(18px);
+  animation: drift 10s ease-in-out infinite;
+}
+
+.orb-cyan {
+  animation: drift 14s ease-in-out infinite;
+}
+
+.orb-magenta {
+  animation: drift 18s ease-in-out infinite reverse;
+}
+
+.ribbon {
+  animation: ribbon 28s linear infinite;
+}
+
+@keyframes drift {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(40px, 30px);
+  }
+}
+
+@keyframes ribbon {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+html.has-cursor,
+html.has-cursor * {
+  cursor: none;
+}
+
+html.has-cursor input,
+html.has-cursor textarea {
+  cursor: text;
+}
+
+.uc-gold {
+  color: #c2b280;
+}
+
+.uc-logo {
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.04em;
+  line-height: 0.9;
+  font-size: clamp(3.2rem, 12vw, 8.5rem);
+  background: linear-gradient(180deg, #e8d7a8 0%, #c2b280 55%, #8a7340 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

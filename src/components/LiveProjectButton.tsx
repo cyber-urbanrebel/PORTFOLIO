@@ -1,0 +1,28 @@
+import { ArrowUpRight } from "lucide-react";
+import { Link } from "react-router-dom";
+
+type LiveProjectButtonProps = {
+  href?: string;
+  label?: string;
+};
+
+export default function LiveProjectButton({ href = "#", label = "Live Project" }: LiveProjectButtonProps) {
+  const classes =
+    "inline-flex items-center gap-2 rounded-full border-2 border-[#D7E2EA] px-8 py-3 text-sm font-medium uppercase tracking-widest text-[#D7E2EA] transition-colors duration-200 hover:bg-[#D7E2EA]/10 sm:px-10 sm:py-3.5 sm:text-base";
+
+  if (href.startsWith("/")) {
+    return (
+      <Link to={href} className={classes}>
+        {label}
+        <ArrowUpRight className="h-4 w-4" strokeWidth={2.2} />
+      </Link>
+    );
+  }
+
+  return (
+    <a href={href} target="_blank" rel="noreferrer" className={classes}>
+      {label}
+      <ArrowUpRight className="h-4 w-4" strokeWidth={2.2} />
+    </a>
+  );
+}

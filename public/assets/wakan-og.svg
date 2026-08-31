@@ -1,0 +1,15 @@
+<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#08090D"/>
+  <rect x="0" y="0" width="1200" height="4" fill="url(#grad)"/>
+  <defs>
+    <linearGradient id="grad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#E8521A"/>
+      <stop offset="100%" stop-color="#F0A500"/>
+    </linearGradient>
+  </defs>
+  <text x="100" y="260" font-family="sans-serif" font-size="72" font-weight="800" fill="#FFFFFF">WAKAN</text>
+  <text x="100" y="330" font-family="sans-serif" font-size="72" font-weight="800" fill="#E8521A">SOLUTIONS</text>
+  <text x="100" y="420" font-family="sans-serif" font-size="28" fill="#8A8F98">Innovate. Empower. Transform.</text>
+  <text x="100" y="480" font-family="sans-serif" font-size="18" fill="#555B66">Engineering · Development · Digital · Energy · Workforce</text>
+  <text x="100" y="560" font-family="sans-serif" font-size="16" fill="#555B66">Woman-Owned · Youth-Led · Nairobi, Kenya · 9 Countries</text>
+</svg>
