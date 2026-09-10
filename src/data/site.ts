@@ -15,6 +15,7 @@ export const DOMAINS = [
   "DaVinci Resolve",
   "Mama Kuku Fresh",
   "SOPHIA",
+  "SupplyPulse",
   "Nairobi",
 ];
 
@@ -126,6 +127,18 @@ export const PROJECTS = [
     points: ["Live site", "9-country footprint", "Innovate. Empower. Transform."],
     shots: ["/assets/wakan-screen-1.png", "/assets/wakan-screen-2.png", "/assets/wakan-og.svg"],
   },
+  {
+    number: "06",
+    name: "SupplyPulse",
+    category: "Inventory Platform",
+    visual: "pulse" as const,
+    href: "https://github.com/cyber-urbanrebel/Supply-pulse-inventory-management-system",
+    description:
+      "Multi-business inventory control tower with live KPIs, weighted 14-day demand forecasting, ABC classification, auto-restock purchase orders, and a full stock-movement ledger — Express + vanilla JS, no database required.",
+    tags: ["Node.js", "Express", "Forecasting", "Ops UI"],
+    points: ["Weighted demand + ABC", "Auto-restock without duplicate POs", "Stock ledger & adjustments"],
+    shots: ["/assets/supply-pulse-1.png", "/assets/supply-pulse-2.png"],
+  },
 ];
 
 export const VENTURES = [
@@ -200,6 +213,7 @@ export const SKILL_GROUPS = [
       "React",
       "Vite",
       "JavaScript / TypeScript",
+      "Node.js / Express",
       "Git & GitHub",
       "Render / Vercel / Netlify",
       "M-Pesa & e-commerce design",

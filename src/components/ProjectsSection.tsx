@@ -3,7 +3,7 @@ import { useRef } from "react";
 import { PROJECTS } from "../data/site";
 import FadeIn from "./FadeIn";
 import LiveProjectButton from "./LiveProjectButton";
-import { CrewVisual, MitmVisual, SophiaVisual, TradingVisual, WakanVisual } from "./ProjectVisuals";
+import { CrewVisual, MitmVisual, PulseVisual, SophiaVisual, TradingVisual, WakanVisual } from "./ProjectVisuals";
 import Tilt3D from "./Tilt3D";
 
 function Visual({ kind }: { kind: (typeof PROJECTS)[number]["visual"] }) {
@@ -11,6 +11,7 @@ function Visual({ kind }: { kind: (typeof PROJECTS)[number]["visual"] }) {
   if (kind === "mitm") return <MitmVisual />;
   if (kind === "crew") return <CrewVisual />;
   if (kind === "wakan") return <WakanVisual />;
+  if (kind === "pulse") return <PulseVisual />;
   return <TradingVisual />;
 }
 
@@ -63,7 +64,7 @@ function ProjectCard({
           </div>
           <LiveProjectButton
             href={project.href}
-            label={project.visual === "crew" ? "View Brand" : "Live Project"}
+            label={project.visual === "crew" ? "View Brand" : project.visual === "pulse" ? "View Repo" : "Live Project"}
           />
         </div>
         <div className="grid min-h-0 flex-1 gap-3 md:grid-cols-[0.9fr_1.4fr]">

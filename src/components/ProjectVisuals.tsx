@@ -110,6 +110,29 @@ export function CrewVisual() {
   );
 }
 
+export function PulseVisual() {
+  return (
+    <div className="relative flex h-full min-h-[240px] flex-col gap-2 overflow-hidden rounded-[28px] border border-[#2563eb]/35 bg-[#071018] p-2 md:rounded-[40px]">
+      <img
+        src="/assets/supply-pulse-1.png"
+        alt="SupplyPulse inventory overview"
+        className="h-[62%] w-full rounded-[20px] object-cover object-top"
+      />
+      <div className="grid min-h-0 flex-1 grid-cols-2 gap-2">
+        <img
+          src="/assets/supply-pulse-2.png"
+          alt="SupplyPulse catalog and KPIs"
+          className="h-full w-full rounded-[16px] object-cover object-left"
+        />
+        <div className="flex flex-col justify-end rounded-[16px] border border-[#14b8a6]/25 bg-[#0a1624] p-3">
+          <p className="text-[0.6rem] uppercase tracking-[0.22em] text-[#57d8ff]/80">Control tower</p>
+          <p className="mt-1 text-xs uppercase tracking-wider text-[#D7E2EA]">Forecast · Restock · Ledger</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export function WakanVisual() {
   return (
     <div className="relative flex h-full min-h-[240px] flex-col gap-2 overflow-hidden rounded-[28px] border border-[#E8521A]/30 bg-[#08090D] p-2 md:rounded-[40px]">
